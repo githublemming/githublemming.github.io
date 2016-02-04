@@ -73,7 +73,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h2>AWS Accounts</h2>
+            <h3>AWS Accounts</h3>
             <p>In order to load file from an S3 bucket you will need to provide AWS IAM API credentials. You provide these via the Preference dialog. In the AWS section of the Preferences click the + button in the displayed form enter:</p>
             <ul>
                 <li>Name : You can provide multiple sets of IAM credentials this name is to identify the account</li>
@@ -83,18 +83,36 @@
                 <li>IAM Secret : A IAM Secret</li>
             </ul>
             <p>Note : The information entered here is stored in a database in your 'Home' directory so you only have to provide it once. Your credentials are not transmitted of your machine, don't believe me. read the code :)</p>
+            <p>
+                Along with entering your information you will need to ensure that the IAM User has permissions to read the files from the S3 Bucket. A Policy like this should do the trick
+            </p>
+            <pre>
+                {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Action": [
+                        "s3:Get*",
+                        "s3:List*"
+                      ],
+                      "Resource": "arn:aws:s3:::cloudtrail-log*",
+                    }
+                  ]
+                }
+            </pre>
 
-            <h2>AWS ALias'</h2>
+            <h3>AWS Alias</h3>
             <p>If you store the CloudTrail logs from multiple accounts in the same bucket remembering which account belongs to the account number can be a pain.</p>
             <p>The AWS Alias section of the Preferences dialog allow you to put a friendly name to an account number. This friendly name will be displayed in the S3 FileChooser dialog.</p>
 
-            <h2>Security</h2>
+            <h3>Security</h3>
             <p>To configure what API Events are displayed on the Security Feature you use the Security section. Click the + button and select the AWS Service and API event that you want.</p>
 
-            <h2>Resources</h2>
+            <h3>Resources</h3>
             <p>The Resources section allow you to define which Resource management API calls are displayed on the Resources Feature. Like the security section simply click the + button and select the API calls you are want to display</p>
 
-            <h2>Scan Ignores</h2>
+            <h3>Scan Ignores</h3>
             <p>This section allows you to defined what API calls are ignored as part of a scan. Either type in a specific API calls such as ListClusters or a wild-carded value such as List*</p>
         </div>
         <!-- /.col-lg-12 -->
