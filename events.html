@@ -73,10 +73,32 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <p>
-                T
-            </p>
+            <p>Events can be loaded from two locations, the local file system or from an S3 bucket, and in two ways.</p>
+            <h2>Full Load</h2>
+            <p>Performing a Full Load of files will load every event in the file. The first two icons on the toolbar perform this action, the first icon is to load files from the local filesystem the second loads files from s3.</p>
+            <p>Loading complete files is useful when something has happened at a particular time and you want to see a flow of all activity across all services at that time. Loading complete files is memory intensive. It is not recommended that you load more that 100 files at the same time, though this is dependant on how busy your account is and how big the files are.</p>
 
+            <h2>Scan</h2>
+            <p>Scanning events is useful when you are only interesting in finding specific events, such as what actions has User x performed or who deleted my RDS!</p>
+            <ul>
+                <li>The scan functionality for Local files is very basic, enter a string, then choose the local files</li>
+                <li>The scan functionality for S3 files is more advanced.</li>
+            </ul>
+            <p>When you click the Scan S3 icon, that is the cloud with the magnifying class, a dialog will open that consists of two parts. One the left is the Filter Panel, on the right if the File Browser.</p>
+
+            <h2>Filter Panel</h2>
+            <p>At the top of the Filter Panel is a dropdown box consisting of several filters.</p>
+            <ul>
+                <li>Text Filter : This allows you to search the whole CloudTrail event for a specific string</li>
+                <li>Date Filter : This filter allow you to defined a from/to date that you are interested in search from/between.</li>
+                <li>Ignore Filter : This filter will ignore all events that have been defined in the Ignore Scan section of preferences.</li>
+                <li>The other filters allow you to filter on a specific part of the CloudTrail event.</li>
+            </ul>
+            <p>You can section that the filtering is performed as a AND or an OR.</p>
+
+            <h2>File Panel</h2>
+            <p>The file panel works as a normal File Chooser, allowing you to select one or more files to be loaded. The load button will only enable when at least one filter has been defined correctly.</p>
+            <p>When performing a scan it is possible to select a folder and all files contained in that folder (and sub-folder) will be scanned.</p>
         </div>
         <!-- /.col-lg-12 -->
     </div>
