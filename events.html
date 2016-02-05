@@ -78,11 +78,11 @@
 
     <div class="row">
         <div class="col-lg-12">
-        	<p><em>What is an Event?</em> An Event describes a Single API call made with the AWS ecosystem. CloudTrail groups events that took place
-        	in a five minute period into files. Depending on how active your AWS account is this will be at least one file.</p>
-            <p>CloudTrail Viewer can load these events from two locations, the local file system or from an S3 bucket.</p>
-            <p>Events in these files can be loaded and processed by CloudTrial Viewer in two different ways. You can either load the complete
-            file and all of its events, or you can search with the file for events that match a defined criteria.</p>
+        	<p><em>What is an Event?</em> An Event describes a Single API call made with the AWS ecosystem. CloudTrail groups all the events that occured
+        	in a five minute period and writes them to a file. Depending on how active your AWS account is this will might be a single file or it could be multiple.</p>
+            <p>CloudTrail Viewer can load these events from two locations: the local filesystem or from an S3 bucket.</p>
+            <p>Events in these files can be loaded and processed by CloudTrial Viewer in one of two different ways. You can either load the complete
+            file and all of its events, or you can search within the file for events that match a defined criteria.</p>
         </div>
     </div>
 
@@ -94,10 +94,10 @@
             	Full Load
             </h3>
             <p>Performing a Full Load will load every event in every file that you choose. To load complete files you
-            use the two icons to the left of the toolbar. The Folder icon loads files from the local filesystem, the cloud will
-            load file from an S3 bucket.</p>
+            use the two icons to the left of the toolbar. The Folder icon loads files from the local filesystem, the cloud icon will
+            load files from an S3 bucket.</p>
             <p>Loading complete files is useful when something has happened at a particular time and you want to see a
-                flow of all activity across all services at that time. Loading complete files allows you to analyse your usage by seing how
+                flow of all activity across all services at that time. Loading complete files allows you to analyse your usage by seeing how
             many EC2s have been started in that timeframe and what instance sizes they are.<p>
             <p>Loading all the events in multiple files is memory intensive. It is
                 not recommended that you load more than 100 files at the same time, though this is dependant on how busy
@@ -112,10 +112,10 @@
             	<img class="h3_image" src="https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Cloud-Scan-48.png">
             	Scan
             </h3>
-            <p>Scanning events is useful when you are only interested in finding specific events, such as what actions
-                has User x performed, how did a rule get added to that Security Group, or who deleted my RDS! The two icons to the
+            <p>Scanning events is useful when you are only interested in finding specific events, such as what API calls
+                 User x has performed, how did a rule get added to that Security Group, or who deleted my RDS! The two icons to the
                 left of the toolbar that have a magnifying glass are used to perform the Scan operations.</p>
-            <p>When performing a Scan only the files that contain the required string or filter criteria will be loaded. Not having the memory constrainsts
+            <p>When performing a Scan only the files that contain the required string or or match a filter criteria will be loaded. Not having the memory constraints
                 of loading every event in a file Scanning allows you to search days, weeks, and even months of log files for what you need.</p>
             <ul>
                 <li>The scan functionality for Local files is very basic, enter a string, then choose the local file(s). This 'needle' which match against any field in the event.</li>
@@ -160,9 +160,9 @@
         <div class="col-lg-12">
             <h3>FileChooser Panel</h3>
             <p>The filechooser panel works as a normal File Chooser, allowing you to select one or more files to be loaded. The
-                load button will only enable when at least one filter has been defined correctly.</p>
-            <p>When performing a scan it is possible to select a folder and all files contained in that folder (and
-                sub-folders) will be loaded and scanned.</p>
+                load button will only enable when at least one filter has been defined and all defined filters are configured correctly.</p>
+            <p>Unlike when Loading events from S3, when you are performing a scan it is possible to select a folder and all files contained in that folder (and
+                sub-folders) will be scanned and the appropriate events loaded.</p>
         </div>
         <!-- /.col-lg-12 -->
     </div>

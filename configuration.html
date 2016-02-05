@@ -76,17 +76,19 @@
     <div class="row">
         <div class="col-lg-12">
             <h3>AWS Accounts</h3>
-            <p>In order to load files from an S3 bucket you will need to provide AWS IAM API credentials. You provide these via the Preference dialog. In the AWS section of the Preferences click the + button in the displayed form enter:</p>
+            <p>In order to load files from an S3 bucket you will need to provide AWS IAM API credentials. You provide these via the Preference dialog in the AWS section of the Preferences. Click the + button in the displayed form and enter:</p>
             <ul>
-                <li>Name : You can provide multiple sets of IAM credentials, this name is to identify the account</li>
-                <li>Account Number : The 12 digit AWS account number. This is optional though some functionality won't work if this is not provided.</li>
-                <li>Bucket Name : The name of the bucket where the CloudTrail files are located.</li>
-                <li>IAM Key : A IAM Key</li>
-                <li>IAM Secret : A IAM Secret</li>
+                <li><strong>Name</strong> : You can configure multiple sets of IAM credentials in CloudTrail Viewer, this name lets you find the one you need. This is useful if have multiple AWS accounts and keep the CloudTrial files in the separate accounts.</li>
+                <li><strong>Account Number</strong> : The 12 digit AWS account number. This is optional though some functionality won't work if this is not provided. See Describe Functionality below.</li>
+                <li><strong>Bucket Name</strong> : The name of the bucket where the CloudTrail files are located.</li>
+                <li><strong>IAM Key</strong> : A IAM Key</li>
+                <li><strong>IAM Secret</strong> : A IAM Secret</li>
             </ul>
-            <p>Note : The information entered here is stored in a database in your 'Home' directory on your computer so you only have to provide it once. Your credentials are not transmitted off your machine, don't believe me. read the code :)</p>
+            <p><strong>Note</strong> : The information entered here is stored in a database in your 'Home' directory on your computer so you only have to provide it once.
+                Your credentials are not transmitted off your machine; don't believe me - <a href="https://github.com/githublemming/CloudTrailViewer">Review The Code</a> :)</p>
             <p>
-                Along with entering your information you will need to ensure that the IAM User has permissions to read the files from the S3 Bucket. A Policy like this should do the trick
+                Along with entering your information you will need to ensure that the IAM User has permissions to read the files from the S3 Bucket. A Policy like this should do the trick, replacing <em>cloudtrail-logs</em>
+                in the Resources section with the name of your bucket.
             </p>
             <pre>
                 {
@@ -105,25 +107,25 @@
             </pre>
 
             <h4>Describe Functionality</h4>
-            It is possible on the Tree View section of the Sidebar to request additional information about certain resources. In order to do this addition configuration is required. The Account
-            Number mentioned above as optional is required for this feature to work. You will also need to add addition permissions to the IAM User to be able to <Strong>Describe</Strong> any AWS
+            It is possible on the Tree View section of the Sidebar to request additional information about certain resources. In order for this to work addition configuration is required. The Account
+            Number mentioned above as optional is required for this feature. You will also need to add addition permissions to the IAM User to be able to <Strong>Describe</Strong> any AWS
             service resource.
 
             <h3>AWS Alias</h3>
             <p>If you store the CloudTrail logs from multiple accounts in the same bucket remembering which account belongs to the account number can be a pain.</p>
-            <p>The AWS Alias section of the Preferences dialog allow you to put a friendly name to an account number. This friendly name will be displayed in the S3 FileChooser dialog.</p>
+            <p>The AWS Alias section of the Preferences dialog allows you to put a friendly name to an account number. This friendly name will be displayed in the S3 FileChooser dialog when it finds it.</p>
 
             <h3>Security</h3>
             <p>To configure what API Events are displayed on the Security Feature you add them to the Security section. Click the <Strong>+</strong> button and select the AWS Service
-                and API event that you want.</p>
+                and API event that you want. More information about this can be found on the Security Feature page.</p>
 
             <h3>Resources</h3>
             <p>The Resources section allow you to define which Resource management API calls are displayed on the Resources Feature. Like the security section simply click the
-                <strong>+</strong> button and select the API calls you are want to display</p>
+                <strong>+</strong> button and select the API calls you are want to display. More information about this can be found on the Resource Feature page.</p>
 
             <h3>Scan Ignores</h3>
-            <p>This section allows you to defined what API calls are ignored as part of a scan. Either type in a specific API call such as <strong>ListClusters</strong>
-                or a wild-carded value such as <Strong>List*</Strong></p>
+            <p>This section allows you to defined what API calls are ignored as part of a scan as descibed on the Event page. Either type in a specific API call such as <strong>ListClusters</strong>
+                or a wild-carded value such as <Strong>List*</Strong>.</p>
         </div>
         <!-- /.col-lg-12 -->
     </div>
