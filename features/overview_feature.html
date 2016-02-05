@@ -91,26 +91,29 @@
             <div class="col-lg-12">
                 <p>
                 The Overview Feature is the main screen when Events are being loaded into the application.
-                As new Events are loaded they are added to a panel that indicated which AWS Service the Event belongs too.
+                As new Events are loaded they are added to a panel that indicates which AWS Service the Event belongs too.
                 </p> 
                 <p>
 				A panel provides the following information:
                 </p>
                 <ul>
-                <li>The name of the service</li>
-                <li>Who generated the Event.</li>
-                <li>The total number of Events loaded</li>
-                <li>The peak number of Events loaded per Second, Minute, Hour
+                    <li>The name of the service</li>
+                    <li>What generated the Event, AWS or IAM.</li>
+                    <li>The total number of Events made by AWS or IAM</li>
+                    <li>The peak number of Events loaded per Second, Minute, Hour by AWS or IAM</li>
+                    <li>The total number of events over all</li>
                 </ul>
                 
                 <p>A Panel is broken down into two areas:- Blue and Green.</p>
                 <p> The Blue section indicates calls that have been made by <strong>AWS</strong>
-                as part of their management of your services. An example of this is Elastic Beanstalk checking the state of an ELB.<br/>
-                The Green section indicates calls that have been made by your Users/Groups or Roles.
+                as part of their management of your services. An example of this is Elastic Beanstalk checking the state of an ELB so it can indicate the state of an environment<br/>
                 </p>
-                
-            	<p>
-            	Clicking on a panel will display a Table View containing just the Events for the section of the panel you select.
+                <p>The Green section indicates calls that have been made by your Users/Groups or Roles.</p>
+
+
+                <h4>Drill Down</h4>
+                <p>
+            	Clicking on a panel will display a Table View containing just the Events for the section of the panel you select. Clicking the Blue section will show you AWS Call, and th Green section will show IAM calls.
             	</p>
                 
             </div>
