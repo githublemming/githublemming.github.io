@@ -12,10 +12,11 @@
     <title>CloudTrail Viewer :: Events</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="http://githublemming.github.io/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="http://githublemming.github.io/css/small-business.css" rel="stylesheet">
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/cloudtrail-viewer.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,35 +45,25 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav nav-pills">
-                <li role="presentation"><a href="http://githublemming.github.io/">Home</a></li>
-                <li role="presentation" class="active"><a href="http://githublemming.github.io/events.html">Events</a>
+                <li role="presentation"><a href="index.html">Home</a></li>
+                <li role="presentation" class="active"><a href="events.html">Events</a>
                 </li>
                 <li role="presentation" class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                        aria-expanded="false">Features <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li role="presentation"><a href="http://githublemming.github.io/features/overview_feature.html">Overview</a>
-                        </li>
-                        <li role="presentation"><a
-                                href="http://githublemming.github.io/features/tableview_feature.html">TableView</a></li>
-                        <li role="presentation"><a href="http://githublemming.github.io/features/invokers_feature.html">Invokers</a>
-                        </li>
-                        <li role="presentation"><a href="http://githublemming.github.io/features/errors_feature.html">Errors</a>
-                        </li>
-                        <li role="presentation"><a href="http://githublemming.github.io/features/security_feature.html">Security</a>
-                        </li>
-                        <li role="presentation"><a
-                                href="http://githublemming.github.io/features/resources_feature.html">Resources</a></li>
-                        <li role="presentation"><a href="http://githublemming.github.io/features/geodata_feature.html">Geo</a>
-                        </li>
-                        <li role="presentation"><a href="http://githublemming.github.io/features/metrics_feature.html">Metrics</a>
-                        </li>
+                        <li role="presentation"><a class="nav_icon icon_overview" href="features/overview_feature.html"><span class="nav_wording">Overview</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_tableview" href="features/tableview_feature.html"><span class="nav_wording">Table View</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_invokers" href="features/invokers_feature.html"><span class="nav_wording">Invokers</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_errors" href="features/errors_feature.html"><span class="nav_wording">Errors</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_security" href="features/security_feature.html"><span class="nav_wording">Security</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_resources" href="features/resources_feature.html"><span class="nav_wording">Resources</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_geodata" href="features/geodata_feature.html"><span class="nav_wording">GeoData</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_metrics" href="features/metrics_feature.html"><span class="nav_wording">Metrics</span></a>	</li>
                     </ul>
                 </li>
-                <li role="presentation"><a href="#http://githublemming.github.io/configuration.html">Configuration</a>
-                </li>
-                <li role="presentation"><a href="https://github.com/githublemming/CloudTrailViewer/issues">Support</a>
-                </li>
+                <li role="presentation"><a href="configuration.html">Configuration</a></li>
+                <li role="presentation"><a href="https://github.com/githublemming/CloudTrailViewer/issues">Support</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -87,40 +78,53 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <p>Events can be loaded from two locations, the local file system or from an S3 bucket, and in two ways.</p>
+        	<p><em>What is an Event?</em> An Event describes a Single API call made with the AWS ecosystem. CloudTrail groups events that took place
+        	in a five minute period into files. Depending on how active your AWS account is this will be at least one file.</p>
+            <p>CloudTrail Viewer can load these events from two locations, the local file system or from an S3 bucket.</p>
+            <p>Events in these files can be processed and loaded by CloudTrial Viewer in two different ways. You can either load the complete
+            file or you can search with the file for events that match a defined criteria.</p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-12">
-            <h3>Full Load</h3>
-            <p>Performing a Full Load of files will load every event in the file. The first two icons on the toolbar
-                perform this action, the first icon is to load files from the local filesystem the second loads files
-                from s3.</p>
+            <h3>
+            	<img class="h3_image" src="https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Local-Open-48.png">
+            	<img class="h3_image" src="https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Cloud-Download-48.png">
+            	Full Load
+            </h3>
+            <p>Performing a Full Load will load every event in every file that you choose to load. To load complete files you
+            use the two icons to the left of the toolbar. The Folder icon loads files from the local filesystem, the cloud will
+            load file from an S3 bucket.</p>
             <p>Loading complete files is useful when something has happened at a particular time and you want to see a
-                flow of all activity across all services at that time. Loading complete files is memory intensive. It is
-                not recommended that you load more that 100 files at the same time, though this is dependant on how busy
-                your account is and how big the files are.</p>
+                flow of all activity across all services at that time.<p>
+            <p>Loading all the events in multiple files is memory intensive. It is
+                not recommended that you load more than 100 files at the same time, though this is dependant on how busy
+                your account is and how many events the files contain.</p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-12">
-            <h3>Scan</h3>
+            <h3>
+            	<img class="h3_image" src="https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Local-Scan-48.png">
+            	<img class="h3_image" src="https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Cloud-Scan-48.png">
+            	Scan
+            </h3>
             <p>Scanning events is useful when you are only interesting in finding specific events, such as what actions
-                has User x performed or who deleted my RDS!</p>
+                has User x performed, how did a rule get added to that Security Group, or who deleted my RDS! The two icons to the
+                left of the toolbar that have a magnifying glass are used to perform the Scan operations.</p>
+            <p>When performing a Scan only the files that contain the required string or filter criteria. With not all events being load
+            it is possible to scan 100's of files quickly.</p>
             <ul>
-                <li>The scan functionality for Local files is very basic, enter a string, then choose the local files
-                </li>
-                <li>The scan functionality for S3 files is more advanced.</li>
+                <li>The scan functionality for Local files is very basic, enter a string, then choose the local file(s).</li>
+                <li>The scan functionality for S3 file(s) is more advanced, as described below.</li>
             </ul>
-            <p>When you click the Scan S3 icon, that is the cloud with the magnifying class, a dialog will open that
-                consists of two parts. One the left is the Filter Panel, on the right if the File Browser.</p>
         </div>
     </div>
 
     <h2>S3FileChooser</h2>
-    <p>The S3FileChooser is a dialog that works similar to a standard FileChooser Dialog but is designed to display and allow select of files from an S3 bucket.
+    <p>The S3FileChooser is a dialog that works similar to a standard FileChooser Dialog, but is designed to display and allow the selection of files located in an S3 bucket.
     From the top of the dialog it is possible to change between AWS accounts that you may have configured. If no AWS Accounts have been configured the dialog will
     not display and a warning advising you to register an AWS Account will be displayed.</p>
     <p>The Dialog consists of two sections</p>
@@ -143,11 +147,11 @@
             <p>At the top of the Filter Panel is a dropdown control consisting of several filters and an <em>Add</em> button. The types of Filters that you can choose from include:</p>
             <ul>
                 <li>Text Filter : This allows you to search the whole CloudTrail event for a specific string.</li>
-                <li>Date Filter : This filter allow you to defined a from/to date that you are interested in searching from/to.</li>
+                <li>Date Filter : This filter allow you to defined a from/to date that you are interested in searching from/to. Add a To and From and search between two dates.</li>
                 <li>Ignore Filter : This filter will ignore all events that have been defined in the Ignore Scan section of preferences.</li>
                 <li>The other filters allow you to filter on a specific part of the CloudTrail event.</li>
             </ul>
-            <p>You can chooser how the filtering process works by selecting either AND or OR at the bottom of the panel.</p>
+            <p>You can choose how the filtering process works by selecting either AND or OR at the bottom of the panel.</p>
         </div>
     </div>
 
@@ -157,7 +161,7 @@
             <p>The filechooser panel works as a normal File Chooser, allowing you to select one or more files to be loaded. The
                 load button will only enable when at least one filter has been defined correctly.</p>
             <p>When performing a scan it is possible to select a folder and all files contained in that folder (and
-                sub-folder) will be loaded and scanned.</p>
+                sub-folders) will be loaded and scanned.</p>
         </div>
         <!-- /.col-lg-12 -->
     </div>

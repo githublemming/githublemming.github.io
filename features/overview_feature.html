@@ -12,10 +12,11 @@
     <title>CloudTrail Viewer :: Feature :: Overview</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="http://githublemming.github.io/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="http://githublemming.github.io/css/small-business.css" rel="stylesheet">
+    <link href="../css/small-business.css" rel="stylesheet">
+    <link href="../css/cloudtrail-viewer.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,22 +44,22 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav nav-pills">
-                    <li role="presentation"><a href="http://githublemming.github.io/">Home</a></li>
-                    <li role="presentation"><a href="http://githublemming.github.io/events.html">Events</a></li>
+                    <li role="presentation"><a href="../index.html">Home</a></li>
+                    <li role="presentation"><a href="../events.html">Events</a></li>
                     <li role="presentation" class="dropdown">
                     	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Features <span class="caret"></span></a>
- 						<ul class="dropdown-menu">
-                            <li role="presentation" class="active"><a href="http://githublemming.github.io/features/overview_feature.html">Overview</a></li>
-                            <li role="presentation"><a href="http://githublemming.github.io/features/tableview_feature.html">TableView</a></li>
-                            <li role="presentation"><a href="http://githublemming.github.io/features/invokers_feature.html">Invokers</a></li>
-                            <li role="presentation"><a href="http://githublemming.github.io/features/errors_feature.html">Errors</a></li>
-                            <li role="presentation"><a href="http://githublemming.github.io/features/security_feature.html">Security</a></li>
-                            <li role="presentation"><a href="http://githublemming.github.io/features/resources_feature.html">Resources</a></li>
-                            <li role="presentation"><a href="http://githublemming.github.io/features/geodata_feature.html">Geo</a></li>
-                            <li role="presentation"><a href="http://githublemming.github.io/features/metrics_feature.html">Metrics</a></li>
-    					</ul>
+                    <ul class="dropdown-menu">
+                        <li role="presentation" class="active"><a class="nav_icon icon_overview" href="http://githublemming.github.io/features/overview_feature.html"><span class="nav_wording">Overview</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_tableview" href="http://githublemming.github.io/features/tableview_feature.html"><span class="nav_wording">Table View</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_invokers" href="http://githublemming.github.io/features/invokers_feature.html"><span class="nav_wording">Invokers</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_errors" href="http://githublemming.github.io/features/errors_feature.html"><span class="nav_wording">Errors</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_security" href="http://githublemming.github.io/features/security_feature.html"><span class="nav_wording">Security</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_resources" href="http://githublemming.github.io/features/resources_feature.html"><span class="nav_wording">Resources</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_geodata" href="http://githublemming.github.io/features/geodata_feature.html"><span class="nav_wording">GeoData</span></a></li>
+                        <li role="presentation"><a class="nav_icon icon_metrics" href="http://githublemming.github.io/features/metrics_feature.html"><span class="nav_wording">Metrics</span></a>	</li>
+                    </ul>
                     </li>
-                    <li role="presentation"><a href="#http://githublemming.github.io/configuration.html">Configuration</a></li>
+                    <li role="presentation"><a href="../configuration.html">Configuration</a></li>
                     <li role="presentation"><a href="https://github.com/githublemming/CloudTrailViewer/issues">Support</a></li>
                 </ul>
             </div>
@@ -72,15 +73,16 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1>Overview Feature</h1>
+                <h1>
+                	<img class="h1_image" src="https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Service-Overview-48.png">
+                	Overview Feature
+                </h1>
                 <p>The Overview Feature provides a top level breakdown by AWS Service of the Events that have been loaded.<p>
             </div>
         </div>
         
         <div class="row">
-            <div>
-                <center><img class="img-responsive img-rounded" src="http://githublemming.github.io/images/overview_feature.png" alt="Overview Feature"></center>
-            </div>
+	        <img class="img-responsive img-rounded center-block" src="../images/overview_feature.png" alt="Overview Feature" width=690>
         </div>
 
 		<br/><br/>
