@@ -1,0 +1,74 @@
+
+.h1_image {
+	vertical-align:middle; 
+	position:relative; 
+	top:-3px; 
+	width:55px;
+	height:55px;
+}
+
+.h3_image {
+	vertical-align:middle; 
+	position:relative; 
+	top:-3px; 
+	width:40px;
+	height:40px;
+}
+
+/**
+ * Stylings for the Features DropDown Navbar
+ */
+.nav_wording {
+	padding-left:15px;
+}
+
+.nav_icon {
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	position:relative;
+	left:20px;
+}
+
+.icon_overview {
+	background-image: url(https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Service-Overview-48.png);
+}
+
+.icon_tableview {
+	background-image: url(https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Table-48.png);
+}
+
+.icon_invokers {
+	background-image: url(https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/User-Overview-48.png);
+}
+
+.icon_errors {
+	background-image: url(https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Error-48.png);
+}
+
+.icon_security {
+	background-image: url(https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Warning-48.png);
+}
+
+.icon_resources {
+	background-image: url(https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Server-48.png);
+}
+
+.icon_geodata {
+	background-image: url(https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Geo-Data-48.png);
+}
+
+.icon_metrics {
+	background-image: url(https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Metrics-48.png);
+}
+
+/**
+ * Stylings for the main Features pages
+ */
+.feature_image {
+	width:490px;
+	height:280px;
+}
+ 
+.feature_image_overview {
+	background-image: url(http://githublemming.github.io/images/overview_feature.png);
+}
