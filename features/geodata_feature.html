@@ -73,8 +73,8 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1><h1><img class="h1_image" src="https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Geo-Data-48.png">Error Feature</h1>GeoData Feature</h1>
-            <p>The GeoData Feature groups all Events together based on Source IP Address.<p>
+            <h1><img class="h1_image" src="https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Geo-Data-48.png">GeoData Feature</h1>
+            <p>The GeoData Feature groups all Events together based on Source IP Address reported in the CloudTrial events.<p>
         </div>
     </div>
 
@@ -84,15 +84,20 @@
         </div>
     </div>
 
-    <br/><br/>
+    <br/>
 
     <div class="row">
         <div class="col-lg-12">
-            <p>The GeoData Feature allow you to see where in the world API calls are being made from. Using a 3rd party library it attmpts to resolve IP addresses in the SoureIPAddress field to a City around the world.
-            These events are then grouped by Panel showing the number of Events for that Area/ <Strong>Note:</Strong>The free 3rd library does not guarantee to be 100% accurate.</p>
-            <p>Located at the top right of the screen is the Map icon, clicking this will open your default web browser and show all events plotted on a Map. This is useful if you don't recognise a City or the IP address
-            could not be resolved.</p>
-            <p>Clicking on a panel will display a Table View containing just the Events for the section of the panel you select.</p>
+            <p>The GeoData Feature allow you to see where in the world API calls are being made from. Using a 3rd party library it attempts to resolve IP addresses in the <em>SoucreIPAddress</em>
+                field to a City around the world. These events are then grouped together and a Panel showing the number of Events for that Area.<br><br/>
+
+                <Strong>Note:</Strong> The free <a href="http://dev.maxmind.com/geoip/geoip2/geolite2/" target="_blank">3rd library</a> used by CloudTrail Viewer does not guarantee to be 100% accurate.</p>
+
+            <p>Located at the top right of the screen is the Map icon, clicking this will open your default web browser and show all events plotted on a Map by city. This is useful if you
+                don't recognise a City or the IP address could not be resolved.</p>
+
+            <h4>Drill Down</h4>
+            <p>Clicking on a panel will display a Table View containing just the Events for the City/IP Address you have selected.</p>
         </div>
         <!-- /.col-lg-12 -->
     </div>

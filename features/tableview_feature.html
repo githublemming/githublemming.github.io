@@ -74,7 +74,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1><img class="h1_image" src="https://rawgit.com/githublemming/CloudTrailViewer/master/src/main/resources/icons/Table-48.png">TableView Feature</h1>
-            <p>The TableView Feature is a main component of the CloudTrail Viewer.<p>
+            <p>The TableView Feature shows all events that are currently loaded in chronological order.<p>
         </div>
     </div>
 
@@ -84,7 +84,7 @@
         </div>
     </div>
 
-    <br/><br/>
+    <br/>
 
     <div class="row">
         <div class="col-lg-12">
@@ -94,10 +94,33 @@
             <h2>Side Bar</h2>
             <p>Clicking a row in the table will display the side bar. The Side Bar consists of three parts:</p>
             <ul>
-                <li>Tree View : The CloudTrial Event selected will be displayed in a Tree Format</li>
-                <li>JSON View : The CloudTrial Event selected is shown in it's original JSON format. Additional fields used by the application such as City are also shown.</li>
-                <li>Chart View : The chart view shows a visual representation of the Top X loaded events as either a Bar or Pie chart. Using the menus you can change what the chart display.</li>
+                <li><strong>Tree View</strong> : The CloudTrial Event selected will be displayed in a Tree Format</li>
+                <li><strong>JSON View</strong> : The CloudTrial Event selected is shown in it's original JSON format.</li>
+                <li><strong>Chart View</strong> : The chart view shows a visual representation of the Top X loaded events as either a Bar or Pie chart. Using the menus you can change what the chart display.</li>
             </ul>
+            <p>You are able to save the current view of the Side Bar as an image by clicking on the disk icon above the change menu.</p>
+
+            <h4>Tree View</h4>
+            <p>The Tree View section of the SideBar displays the selected event in a Tree Format. If the event has Request parameters that relates to a Resource, for example an ELB Name,
+            double clicking on the resouce will attempt to retrieve information about it.<br/><br/>
+
+            <strong>Note:</strong> for this functionality to work you need to provde the AWS Account ID when defining your Account information. The IAM User associated with the AWS credentials
+                will also need to have the appropriate rights to perform the tasks.
+            </p>
+
+            <h4>JSON View</h4>
+            The JSON View section of the Side Bar display show the original JSON Event that was loaded from the files. You will also see additional fields such as City where the event has been
+            resolved using the GeoData database.
+
+            <h4>Chart View</h4>
+            <p>The chart view show a graphical analysis of the events that are currently loaded into the Table. It has the following functionality</p>
+            <ul>
+                <li>Top either the Top 5 or Top 10 events</li>
+                <li>The style of the chart can be Pie or Bar (both 2d and 3d)</li>
+                <li>If viewing a bar chart the orientation of the data can be changed</li>
+                <li>Changed what field of the Event is being represented</li>
+            </ul>
+            <p>Below the chart is a table providing a legend for the chart.</p>
         </div>
         <!-- /.col-lg-12 -->
     </div>
